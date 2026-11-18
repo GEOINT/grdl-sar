@@ -59,6 +59,10 @@ python_files = ["test_*.py"]
 markers = [
     "decomposition: Polarimetric decomposition tests",
     "sar: SAR-specific processing tests",
+    "cfar: CFAR detector tests",
+    "detection: Detection model tests",
+    "gpu: GPU (CuPy) verification tests",
+    "benchmark: Performance benchmark tests",
     "integration: Integration tests",
     "slow: Slow tests",
 ]

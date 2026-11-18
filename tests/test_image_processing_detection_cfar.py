@@ -29,16 +29,20 @@ Modified
 import numpy as np
 import pytest
 
+pytest.importorskip("shapely")
+
 from grdl.exceptions import ValidationError
 from grdl.image_processing.detection import (
-    CACFARDetector,
-    CFARDetector,
     DetectionSet,
     Fields,
+    is_dictionary_field,
+)
+from grdl_sar.detection import (
+    CACFARDetector,
+    CFARDetector,
     GOCFARDetector,
     OSCFARDetector,
     SOCFARDetector,
-    is_dictionary_field,
 )
 
 

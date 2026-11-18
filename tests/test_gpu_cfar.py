@@ -76,7 +76,7 @@ except ImportError:
     _HAS_CFAR = False
 
 try:
-    from grdl.image_processing.sar.dominance import (
+    from grdl_sar.subaperture.dominance import (
         compute_dominance,
         compute_sublook_entropy,
     )

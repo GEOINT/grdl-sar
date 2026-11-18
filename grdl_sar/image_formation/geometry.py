@@ -49,8 +49,25 @@ from grdl.exceptions import DependencyError
 try:
     from sarpy.geometry.geocoords import wgs_84_norm, ecf_to_geodetic
 except ImportError:
-    wgs_84_norm = None  # type: ignore[assignment]
-    ecf_to_geodetic = None  # type: ignore[assignment]
+    from grdl.geolocation.coordinates import WGS84_A, WGS84_B, ecef_to_geodetic
+
+    def ecf_to_geodetic(pts: np.ndarray, ordering: str = 'latlong') -> np.ndarray:
+        """Pure-NumPy WGS-84 ECEF-to-geodetic fallback."""
+        llh = ecef_to_geodetic(pts)
+        if ordering == 'longlat':
+            return llh[..., [1, 0, 2]]
+        return llh
+
+    def wgs_84_norm(pts: np.ndarray) -> np.ndarray:
+        """Pure-NumPy WGS-84 ellipsoid outward normal fallback."""
+        arr = np.asarray(pts, dtype=np.float64)
+        scaled = arr * np.array([
+            1.0 / (WGS84_A ** 2),
+            1.0 / (WGS84_A ** 2),
+            1.0 / (WGS84_B ** 2),
+        ])
+        norms = np.linalg.norm(scaled, axis=-1, keepdims=True)
+        return scaled / norms
 
 # GRDL internal
 from grdl.IO.models.cphd import CPHDMetadata, CPHDPVP

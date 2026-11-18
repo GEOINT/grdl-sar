@@ -41,6 +41,7 @@ import numpy as np
 
 # GRDL internal
 try:
+    import shapely  # noqa: F401
     from grdl_sar.detection.cfar import (
         CACFARDetector,
         GOCFARDetector,

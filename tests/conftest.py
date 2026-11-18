@@ -27,6 +27,25 @@ Modified
 import numpy as np
 import pytest
 
+try:
+    import pytest_benchmark  # noqa: F401
+except ImportError:
+    class _FallbackBenchmark:
+        """Minimal fallback when pytest-benchmark is not installed."""
+
+        def __init__(self) -> None:
+            self.extra_info: dict = {}
+
+        def __call__(self, fn, *args, **kwargs):
+            return fn(*args, **kwargs)
+
+        def pedantic(self, target, args=(), kwargs=None, **_opts):
+            return target(*args, **(kwargs or {}))
+
+    @pytest.fixture
+    def benchmark():
+        return _FallbackBenchmark()
+
 
 @pytest.fixture
 def rng():

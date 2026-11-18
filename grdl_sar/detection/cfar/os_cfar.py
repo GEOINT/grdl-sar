@@ -55,11 +55,6 @@ from grdl_sar.detection.cfar._base import (
     CFARDetector,
     _annular_stats,
 )
-from grdl_sar.detection.cfar._validation import (
-    validate_assumption,
-    validate_cfar_window,
-    validate_pfa,
-)
 from grdl.image_processing.params import Desc, Range
 from grdl.image_processing.versioning import processor_tags, processor_version
 from grdl.vocabulary import DetectionType, ImageModality, ProcessorCategory
@@ -122,14 +117,13 @@ class OSCFARDetector(CFARDetector):
         assumption: str = 'gaussian',
         percentile: float = 75.0,
     ) -> None:
-        validate_cfar_window(guard_cells, training_cells)
-        validate_pfa(pfa)
-        validate_assumption(assumption)
-        self.guard_cells = guard_cells
-        self.training_cells = training_cells
-        self.pfa = pfa
-        self.min_pixels = min_pixels
-        self.assumption = assumption
+        super().__init__(
+            guard_cells=guard_cells,
+            training_cells=training_cells,
+            pfa=pfa,
+            min_pixels=min_pixels,
+            assumption=assumption,
+        )
         self.percentile = percentile
 
     def _estimate_background(

@@ -329,8 +329,6 @@ def test_c2_filtering():
     assert np.all(filtered[3] >= 0), "C22 should be non-negative"
     print("   ✓ All checks passed")
 
-    return True
-
 
 def test_explicit_matrix_types():
     """Test explicit matrix type specification."""
@@ -353,11 +351,9 @@ def test_explicit_matrix_types():
         filt_wrong = WishartFilter(kernel_size=5, matrix_type="C3")
         filt_wrong.apply(covmat_c2)  # Should fail - C2 has 4 bands, C3 expects 9
         print("   ✗ Expected error was not raised")
-        return False
+        assert False, "Expected ValueError was not raised"
     except ValueError as e:
         print(f"   ✓ Expected error caught: {e}")
-
-    return True
 
 
 def test_edge_preservation():
@@ -397,7 +393,6 @@ def test_edge_preservation():
         )
 
     print("\n   ✓ Edge preservation test complete")
-    return True
 
 
 def main():
@@ -409,21 +404,17 @@ def main():
 
     try:
         # Run tests
-        success = True
-        success &= test_c2_filtering()
-        success &= test_explicit_matrix_types()
-        success &= test_edge_preservation()
+        test_c2_filtering()
+        test_explicit_matrix_types()
+        test_edge_preservation()
 
         # Summary
         print("\n" + "=" * 60)
-        if success:
-            print("✓ All tests PASSED")
-        else:
-            print("✗ Some tests FAILED")
+        print("✓ All tests PASSED")
         print("=" * 60)
         print()
 
-        return 0 if success else 1
+        return 0
 
     except Exception as e:
         print(f"\n✗ Test suite failed with exception: {e}")

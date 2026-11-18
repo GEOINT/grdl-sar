@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grdl-sar"
+version = "0.1.0"
+description = "GEOINT Rapid Development Library SAR, PolSAR & Image Formation Component Catalog"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [
+    {name = "Duane Smalley", email = "170194430+DDSmalls@users.noreply.github.com"},
+    {name = "Steven Siebert"},
+    {name = "geoint.org"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "grdl>=0.8.1",
+    "numpy>=2.0.0",
+    "scipy>=1.11.0",
+]
+
+[project.optional-dependencies]
+detection = [
+    "shapely>=2.0.0",
+]
+polsar = [
+    "numba>=0.57.0",
+]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.entry-points."grdl.catalogs"]
+grdl_sar = "grdl_sar:get_catalog_path"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["grdl_sar*"]
+
+[tool.setuptools.package-data]
+grdl_sar = ["catalog.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+markers = [
+    "decomposition: Polarimetric decomposition tests",
+    "sar: SAR-specific processing tests",
+    "integration: Integration tests",
+    "slow: Slow tests",
+]

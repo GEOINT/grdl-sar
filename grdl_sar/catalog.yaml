@@ -1,0 +1,1963 @@
+catalog_meta:
+  format_version: 1
+  package: grdl-sar
+  package_version: 0.1.0
+  next_id: 51
+artifacts:
+- id: 1
+  name: DegreeOfPolarization
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Barakat generalised degree of polarization (full-pol).
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.dop.DegreeOfPolarization
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 2
+  name: CompactPolDegreeOfPolarization
+  version: 1.1.0
+  artifact_type: grdl_processor
+  description: C2 DoP preserving input precision; undefined zero-power DoP returns
+    0.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.dop_cp.CompactPolDegreeOfPolarization
+  processor_version: 1.1.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+      chi:
+        type: number
+        description: Ellipticity angle of transmitted wave
+        minimum: -90.0
+        maximum: 90.0
+        default: 45.0
+      psi:
+        type: number
+        description: Orientation angle of transmitted wave
+        minimum: -90.0
+        maximum: 90.0
+        default: 0.0
+    additionalProperties: false
+- id: 3
+  name: DegreeOfPolarizationDP
+  version: 1.1.0
+  artifact_type: grdl_processor
+  description: Barakat degree of polarization for dual-pol covariance matrix C2.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.dop_dp.DegreeOfPolarizationDP
+  processor_version: 1.1.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 4
+  name: DualPolRadarBuiltUpIndex
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Dual-pol Radar Built-up Index from normalized Stokes terms.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.dprbi.DualPolRadarBuiltUpIndex
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 5
+  name: DualPolRadarSurfaceIndex
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Dual-pol Radar Surface Index from entropy and Stokes normalization.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.dprsi.DualPolRadarSurfaceIndex
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 6
+  name: FreemanDurden3C
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Freeman-Durden 3-component model-based power decomposition.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.freeman_durden.FreemanDurden3C
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 7
+  name: FullPolHAalpha
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Full-pol H/A/Alpha (Cloude-Pottier) eigenvalue decomposition.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.h_a_alpha_fp.FullPolHAalpha
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 8
+  name: DualPolHAlpha
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Dual-pol H/Alpha eigenvalue decomposition.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.h_alpha_dp.DualPolHAlpha
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 3
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 9
+  name: CompactPolMChi
+  version: 1.1.0
+  artifact_type: grdl_processor
+  description: M-chi decomposition for compact-pol C2.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.m_chi_cp.CompactPolMChi
+  processor_version: 1.1.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+      chi:
+        type: number
+        description: Ellipticity angle of transmitted wave
+        minimum: -90.0
+        maximum: 90.0
+        default: 45.0
+      psi:
+        type: number
+        description: Orientation angle of transmitted wave
+        minimum: -90.0
+        maximum: 90.0
+        default: 0.0
+    additionalProperties: false
+- id: 10
+  name: CompactPolMDelta
+  version: 1.1.0
+  artifact_type: grdl_processor
+  description: M-delta decomposition for compact-pol C2.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.m_delta_cp.CompactPolMDelta
+  processor_version: 1.1.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+      chi:
+        type: number
+        description: Ellipticity angle of transmitted wave
+        minimum: -90.0
+        maximum: 90.0
+        default: 45.0
+      psi:
+        type: number
+        description: Orientation angle of transmitted wave
+        minimum: -90.0
+        maximum: 90.0
+        default: 0.0
+    additionalProperties: false
+- id: 11
+  name: ModelFree3C
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Model-free 3-component scattering power decomposition (MF3CF).
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.model_free.ModelFree3C
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 12
+  name: ModelFree4C
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Model-free 4-component scattering power decomposition (MF4CF).
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.model_free.ModelFree4C
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 13
+  name: CompactPolModelFree3C
+  version: 1.1.0
+  artifact_type: grdl_processor
+  description: Model-free 3-component compact-pol decomposition.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.model_free_cp.CompactPolModelFree3C
+  processor_version: 1.1.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+      chi:
+        type: number
+        description: Ellipticity angle of transmitted wave
+        minimum: -90.0
+        maximum: 90.0
+        default: 45.0
+      psi:
+        type: number
+        description: Orientation angle of transmitted wave
+        minimum: -90.0
+        maximum: 90.0
+        default: 0.0
+    additionalProperties: false
+- id: 14
+  name: ModelFree3CD
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Model-free dual-pol 3-component decomposition from T2.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.model_free_dp.ModelFree3CD
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 15
+  name: NeumannDecomposition
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Neumann polarimetric decomposition (scattering diversity parameters).
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.neumann.NeumannDecomposition
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 16
+  name: PauliDecomposition
+  version: 0.2.0
+  artifact_type: grdl_processor
+  description: Quad-pol Pauli basis decomposition.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.pauli.PauliDecomposition
+  processor_version: 0.2.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 1
+    additionalProperties: false
+- id: 17
+  name: CoherencyMatrix
+  version: 0.2.0
+  artifact_type: grdl_processor
+  description: Spatially-averaged polarimetric coherency matrix [T]
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.pol_matrix.CoherencyMatrix
+  processor_version: 0.2.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - enhance
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 63
+        default: 1
+    additionalProperties: false
+- id: 18
+  name: CovarianceMatrix
+  version: 0.2.0
+  artifact_type: grdl_processor
+  description: Spatially-averaged polarimetric covariance matrix [C]
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.pol_matrix.CovarianceMatrix
+  processor_version: 0.2.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - enhance
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 63
+        default: 1
+    additionalProperties: false
+- id: 19
+  name: KennaughMatrix
+  version: 0.1.1
+  artifact_type: grdl_processor
+  description: Spatially-averaged polarimetric Kennaugh matrix [K] (4×4 real)
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.pol_matrix.KennaughMatrix
+  processor_version: 0.1.1
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - enhance
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size (pixels, odd)
+        minimum: 1
+        maximum: 63
+        default: 1
+    additionalProperties: false
+- id: 20
+  name: StokesVector
+  version: 0.2.0
+  artifact_type: grdl_processor
+  description: Spatially-averaged Stokes parameters for dual-pol or co-pol SAR channels
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.pol_matrix.StokesVector
+  processor_version: 0.2.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - enhance
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size (pixels, odd)
+        minimum: 1
+        maximum: 63
+        default: 1
+    additionalProperties: false
+- id: 21
+  name: PraksParameters
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Praks polarimetric parameters — Frobenius-norm alternatives to H/A/Alpha.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.praks.PraksParameters
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 22
+  name: CompactPolSOmega
+  version: 1.1.0
+  artifact_type: grdl_processor
+  description: Improved S-Omega decomposition for compact-pol C2.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.s_omega_cp.CompactPolSOmega
+  processor_version: 1.1.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+      chi:
+        type: number
+        description: Ellipticity angle of transmitted wave
+        minimum: -90.0
+        maximum: 90.0
+        default: 45.0
+      psi:
+        type: number
+        description: Orientation angle of transmitted wave
+        minimum: -90.0
+        maximum: 90.0
+        default: 0.0
+    additionalProperties: false
+- id: 23
+  name: ScatteringPowerDP
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Dual-pol scattering powers from DpRBI/DpRSI-derived characteristics.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.scattering_power_dp.ScatteringPowerDP
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+      method:
+        type: integer
+        description: 1=decomposition, 2=factorization
+        minimum: 1
+        maximum: 2
+        default: 1
+    additionalProperties: false
+- id: 24
+  name: ShannonEntropy
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Shannon entropy decomposition of the full-pol coherency matrix [T3].
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.shannon_entropy.ShannonEntropy
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 25
+  name: ShannonEntropyDP
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Shannon entropy components (total, intensity, polarimetric) for dual-pol.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.shannon_entropy_dp.ShannonEntropyDP
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 26
+  name: TouziDecomposition
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Touzi Coherent Target Scattering Vector Model (CTSVM) decomposition.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.touzi.TouziDecomposition
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+    additionalProperties: false
+- id: 27
+  name: Yamaguchi4C
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Yamaguchi four-component scattering power decomposition.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.decomposition.yamaguchi.Yamaguchi4C
+  processor_version: 1.0.0
+  processor_type: decomposition
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Boxcar averaging window size
+        minimum: 1
+        maximum: 31
+        default: 7
+      model:
+        type: string
+        description: 'Decomposition variant: ''y4o'' (original), ''y4r'' (rotation-corrected),
+          ''y4s'' (extended volume)'
+        enum:
+        - y4o
+        - y4r
+        - y4s
+        default: y4o
+    additionalProperties: false
+- id: 28
+  name: CACFARDetector
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Cell-Averaging CFAR detector for homogeneous clutter
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.detection.cfar.ca_cfar.CACFARDetector
+  processor_version: 1.0.0
+  processor_type: detector
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - find_maxima
+    detection_types:
+    - phenomenon_signature
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      guard_cells:
+        type: integer
+        description: Guard band half-width (pixels)
+        minimum: 1
+        maximum: 20
+        default: 3
+      training_cells:
+        type: integer
+        description: Training annulus half-width (pixels)
+        minimum: 2
+        maximum: 50
+        default: 12
+      pfa:
+        type: number
+        description: Probability of false alarm
+        minimum: 1.0e-12
+        maximum: 0.5
+        default: 0.001
+      min_pixels:
+        type: integer
+        description: Minimum cluster area (pixels)
+        minimum: 1
+        maximum: 1000
+        default: 9
+      assumption:
+        type: string
+        description: Statistical model for threshold
+        enum:
+        - gaussian
+        - exponential
+        default: gaussian
+    additionalProperties: false
+- id: 29
+  name: GOCFARDetector
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Greatest-Of CFAR detector for clutter edge suppression
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.detection.cfar.go_cfar.GOCFARDetector
+  processor_version: 1.0.0
+  processor_type: detector
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - find_maxima
+    detection_types:
+    - phenomenon_signature
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      guard_cells:
+        type: integer
+        description: Guard band half-width (pixels)
+        minimum: 1
+        maximum: 20
+        default: 3
+      training_cells:
+        type: integer
+        description: Training annulus half-width (pixels)
+        minimum: 2
+        maximum: 50
+        default: 12
+      pfa:
+        type: number
+        description: Probability of false alarm
+        minimum: 1.0e-12
+        maximum: 0.5
+        default: 0.001
+      min_pixels:
+        type: integer
+        description: Minimum cluster area (pixels)
+        minimum: 1
+        maximum: 1000
+        default: 9
+      assumption:
+        type: string
+        description: Statistical model for threshold
+        enum:
+        - gaussian
+        - exponential
+        default: gaussian
+    additionalProperties: false
+- id: 30
+  name: OSCFARDetector
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Ordered-Statistics CFAR detector robust to interfering targets
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.detection.cfar.os_cfar.OSCFARDetector
+  processor_version: 1.0.0
+  processor_type: detector
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - find_maxima
+    detection_types:
+    - phenomenon_signature
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      guard_cells:
+        type: integer
+        description: Guard band half-width (pixels)
+        minimum: 1
+        maximum: 20
+        default: 3
+      training_cells:
+        type: integer
+        description: Training annulus half-width (pixels)
+        minimum: 2
+        maximum: 50
+        default: 12
+      pfa:
+        type: number
+        description: Probability of false alarm
+        minimum: 1.0e-12
+        maximum: 0.5
+        default: 0.001
+      min_pixels:
+        type: integer
+        description: Minimum cluster area (pixels)
+        minimum: 1
+        maximum: 1000
+        default: 9
+      assumption:
+        type: string
+        description: Statistical model for threshold
+        enum:
+        - gaussian
+        - exponential
+        default: gaussian
+      percentile:
+        type: number
+        description: Percentile rank for background estimate
+        minimum: 1.0
+        maximum: 99.0
+        default: 75.0
+    additionalProperties: false
+- id: 31
+  name: SOCFARDetector
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Smallest-Of CFAR detector for clutter edge sensitivity
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.detection.cfar.so_cfar.SOCFARDetector
+  processor_version: 1.0.0
+  processor_type: detector
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - find_maxima
+    detection_types:
+    - phenomenon_signature
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      guard_cells:
+        type: integer
+        description: Guard band half-width (pixels)
+        minimum: 1
+        maximum: 20
+        default: 3
+      training_cells:
+        type: integer
+        description: Training annulus half-width (pixels)
+        minimum: 2
+        maximum: 50
+        default: 12
+      pfa:
+        type: number
+        description: Probability of false alarm
+        minimum: 1.0e-12
+        maximum: 0.5
+        default: 0.001
+      min_pixels:
+        type: integer
+        description: Minimum cluster area (pixels)
+        minimum: 1
+        maximum: 1000
+        default: 9
+      assumption:
+        type: string
+        description: Statistical model for threshold
+        enum:
+        - gaussian
+        - exponential
+        default: gaussian
+    additionalProperties: false
+- id: 32
+  name: EnhancedLeeFilter
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Enhanced Lee adaptive speckle filter (Lopes et al., 1990).
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.filters.enhanced_lee.EnhancedLeeFilter
+  processor_version: 1.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - filters
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      kernel_size:
+        type: integer
+        description: Square kernel side length (odd)
+        minimum: 3
+        maximum: 31
+        default: 7
+      enl:
+        type: number
+        description: Equivalent Number of Looks (0 = auto)
+        minimum: 0.0
+        default: 0.0
+      damp:
+        type: number
+        description: Exponential damping factor for the mixed-region weight
+        minimum: 0.0
+        default: 1.0
+    additionalProperties: false
+- id: 33
+  name: IDANFilter
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Intensity-Driven Adaptive-Neighborhood (IDAN) speckle filter.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.filters.idan.IDANFilter
+  processor_version: 1.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - filters
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      kernel_size:
+        type: integer
+        description: Square kernel side length (odd)
+        minimum: 3
+        maximum: 31
+        default: 7
+      enl:
+        type: number
+        description: Equivalent Number of Looks (0 = auto)
+        minimum: 0.0
+        default: 0.0
+      max_pixels:
+        type: integer
+        description: Maximum adaptive neighborhood size
+        minimum: 5
+        maximum: 500
+        default: 50
+      similarity_threshold:
+        type: number
+        description: Intensity tolerance band as fraction of seed mean
+        minimum: 0.0
+        maximum: 1.0
+        default: 0.5
+    additionalProperties: false
+- id: 34
+  name: LeeSigmaFilter
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Lee Sigma adaptive speckle filter for SAR imagery.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.filters.lee_sigma.LeeSigmaFilter
+  processor_version: 1.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - filters
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      kernel_size:
+        type: integer
+        description: Square kernel side length (odd)
+        minimum: 3
+        maximum: 31
+        default: 7
+      enl:
+        type: number
+        description: Equivalent Number of Looks (0 = auto)
+        minimum: 0.0
+        default: 0.0
+      sigma:
+        type: number
+        description: Probability coverage of the sigma selection interval
+        minimum: 0.01
+        maximum: 0.99
+        default: 0.9
+      min_valid:
+        type: integer
+        description: Minimum valid neighbours for sigma statistics
+        minimum: 1
+        maximum: 9801
+        default: 1
+    additionalProperties: false
+- id: 35
+  name: PhaseGradientFilter
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Windowed phase gradient filter for complex-valued imagery.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.filters.phase.PhaseGradientFilter
+  processor_version: 1.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - filters
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      kernel_size:
+        type: integer
+        description: Smoothing window side length (odd)
+        minimum: 3
+        maximum: 101
+        default: 3
+      direction:
+        type: string
+        description: Gradient component to return
+        enum:
+        - magnitude
+        - row
+        - col
+        default: magnitude
+      mode:
+        type: string
+        description: Boundary handling mode
+        enum:
+        - reflect
+        - constant
+        - nearest
+        - wrap
+        default: reflect
+    additionalProperties: false
+- id: 36
+  name: RefinedLeeFilter
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Refined Lee polarimetric speckle filter.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.filters.refined_lee.RefinedLeeFilter
+  processor_version: 1.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - filters
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      kernel_size:
+        type: integer
+        description: Square kernel side length (odd)
+        minimum: 3
+        maximum: 31
+        default: 7
+      nlook:
+        type: number
+        description: Number of looks (strictly positive)
+        minimum: 0.0
+        default: 1.0
+    additionalProperties: false
+- id: 37
+  name: BoxcarFilter
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Boxcar (uniform average) spatial filter.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.filters.sar_speckle.BoxcarFilter
+  processor_version: 1.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    - PAN
+    - MSI
+    category:
+    - filters
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Square filter window size
+        minimum: 1
+        maximum: 31
+        default: 3
+    additionalProperties: false
+- id: 38
+  name: FrostFilter
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Frost exponentially damped adaptive speckle filter for SAR imagery.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.filters.sar_speckle.FrostFilter
+  processor_version: 1.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - filters
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Square filter window size (odd integer)
+        minimum: 3
+        maximum: 31
+        default: 5
+      damping_factor:
+        type: number
+        description: Exponential damping factor
+        minimum: 0.1
+        maximum: 10.0
+        default: 2.0
+    additionalProperties: false
+- id: 39
+  name: KuanFilter
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Kuan adaptive speckle filter (exact MMSE formulation).
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.filters.sar_speckle.KuanFilter
+  processor_version: 1.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - filters
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      window_size:
+        type: integer
+        description: Square filter window size (odd integer)
+        minimum: 3
+        maximum: 31
+        default: 5
+      num_looks:
+        type: integer
+        description: Equivalent number of looks (ENL)
+        minimum: 1
+        maximum: 64
+        default: 1
+    additionalProperties: false
+- id: 40
+  name: ComplexLeeFilter
+  version: 2.0.0
+  artifact_type: grdl_processor
+  description: Phase-preserving Lee adaptive speckle filter for complex SAR SLC data.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.filters.standard_lee.ComplexLeeFilter
+  processor_version: 2.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - filters
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      kernel_size:
+        type: integer
+        description: Square kernel side length (odd)
+        minimum: 3
+        maximum: 31
+        default: 7
+      enl:
+        type: number
+        description: Equivalent Number of Looks (0 = auto)
+        minimum: 0.0
+        default: 0.0
+    additionalProperties: false
+- id: 41
+  name: LeeFilter
+  version: 2.0.0
+  artifact_type: grdl_processor
+  description: Lee adaptive speckle filter for SAR imagery.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.filters.standard_lee.LeeFilter
+  processor_version: 2.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - filters
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      kernel_size:
+        type: integer
+        description: Square kernel side length (odd)
+        minimum: 3
+        maximum: 31
+        default: 7
+      enl:
+        type: number
+        description: Equivalent Number of Looks (0 = auto)
+        minimum: 0.0
+        default: 0.0
+    additionalProperties: false
+- id: 42
+  name: WishartFilter
+  version: 2.0.0
+  artifact_type: grdl_processor
+  description: Adaptive Wishart-distance averaging of C2/T2/C3/T3/C4/T4 matrices.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.filters.wishart.WishartFilter
+  processor_version: 2.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - filters
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      kernel_size:
+        type: integer
+        description: Square kernel side length (odd)
+        minimum: 3
+        maximum: 31
+        default: 7
+      enl:
+        type: number
+        description: Equivalent Number of Looks (0 = auto)
+        minimum: 0.0
+        default: 0.0
+      sigma_range:
+        type: number
+        description: Adaptive similarity threshold
+        minimum: 0.5
+        maximum: 10.0
+        default: 3.0
+      min_weight_sum:
+        type: number
+        description: Minimum weight sum to apply filter
+        minimum: 0.0
+        maximum: 1.0
+        default: 0.1
+    additionalProperties: false
+- id: 43
+  name: FastBackProjection
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Fast Factorized Back-Projection for strip map SAR.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.image_formation.ffbp.FastBackProjection
+  processor_version: 1.0.0
+  processor_type: image_formation
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - image_formation
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties: {}
+    additionalProperties: false
+- id: 44
+  name: PolarFormatAlgorithm
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Polar Format Algorithm for spotlight SAR image formation.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.image_formation.pfa.PolarFormatAlgorithm
+  processor_version: 1.0.0
+  processor_type: image_formation
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - image_formation
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties: {}
+    additionalProperties: false
+- id: 45
+  name: RangeDopplerAlgorithm
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Range-Doppler Algorithm for stripmap SAR image formation.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.image_formation.rda.RangeDopplerAlgorithm
+  processor_version: 1.0.0
+  processor_type: image_formation
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - image_formation
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties: {}
+    additionalProperties: false
+- id: 46
+  name: StripmapPFA
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Subaperture PFA for stripmap SAR image formation.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.image_formation.stripmap_pfa.StripmapPFA
+  processor_version: 1.0.0
+  processor_type: image_formation
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - image_formation
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties: {}
+    additionalProperties: false
+- id: 47
+  name: CSIProcessor
+  version: 0.2.0
+  artifact_type: grdl_processor
+  description: Coherent Shape Index (color sub-aperture) RGB composite
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.subaperture.csi.CSIProcessor
+  processor_version: 0.2.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - enhance
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      dimension:
+        type: string
+        description: Frequency axis to split
+        enum:
+        - azimuth
+        - range
+        default: azimuth
+      overlap:
+        type: number
+        description: Fractional overlap between sub-bands
+        minimum: 0.0
+        maximum: 0.99
+        default: 0.5
+      deweight:
+        type: boolean
+        description: Remove collection apodization before splitting
+        default: true
+      normalization:
+        type: string
+        description: Normalization method per channel
+        enum:
+        - none
+        - log
+        - percentile
+        default: none
+      plow:
+        type: number
+        description: Lower percentile for contrast stretch
+        minimum: 0.0
+        maximum: 100.0
+        default: 2.0
+      phigh:
+        type: number
+        description: Upper percentile for contrast stretch
+        minimum: 0.0
+        maximum: 100.0
+        default: 98.0
+      floor_db:
+        type: number
+        description: Minimum dB floor (log mode)
+        maximum: 0.0
+        default: -60.0
+    additionalProperties: false
+- id: 48
+  name: DominanceFeatures
+  version: 1.0.0
+  artifact_type: grdl_processor
+  description: Sub-aperture dominance and entropy feature maps
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.subaperture.dominance.DominanceFeatures
+  processor_version: 1.0.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - analyze
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      num_looks:
+        type: integer
+        description: Number of sub-aperture looks
+        minimum: 2
+        maximum: 64
+        default: 7
+      dimension:
+        type: string
+        description: Frequency axis to split
+        default: azimuth
+      window_size:
+        type: integer
+        description: Spatial smoothing kernel size
+        minimum: 1
+        maximum: 101
+        default: 7
+      dom_window:
+        type: integer
+        description: Contiguous look window for dominance
+        minimum: 1
+        maximum: 32
+        default: 3
+    additionalProperties: false
+- id: 49
+  name: MultilookDecomposition
+  version: 0.1.0
+  artifact_type: grdl_processor
+  description: 2D sub-aperture spectral decomposition into M x N grid
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.subaperture.multilook.MultilookDecomposition
+  processor_version: 0.1.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+    category:
+    - stacks
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      looks_rg:
+        type: integer
+        description: Range sub-aperture looks
+        minimum: 1
+        maximum: 16
+      looks_az:
+        type: integer
+        description: Azimuth sub-aperture looks
+        minimum: 1
+        maximum: 16
+      overlap:
+        type: number
+        description: Fractional overlap between sub-bands
+        minimum: 0.0
+        maximum: 0.99
+      deweight:
+        type: boolean
+        description: Remove apodization before splitting
+        default: true
+    additionalProperties: false
+- id: 50
+  name: SublookDecomposition
+  version: 0.1.0
+  artifact_type: grdl_processor
+  description: Split a complex SAR image into sub-aperture looks.
+  author: geoint.org
+  license: MIT
+  pypi_package: grdl-sar
+  conda_package: grdl-sar
+  conda_channel: conda-forge
+  processor_class: grdl_sar.subaperture.sublook.SublookDecomposition
+  processor_version: 0.1.0
+  processor_type: transform
+  yaml_definition: null
+  python_dsl: null
+  tags:
+    modalities:
+    - SAR
+  requires_global_pass: false
+  alternatives: []
+  param_schema:
+    $schema: https://json-schema.org/draft/2020-12/schema
+    type: object
+    properties:
+      num_looks:
+        type: integer
+        description: Number of sublooks
+        minimum: 2
+      dimension:
+        type: string
+        description: Split dimension (azimuth or range)
+        enum:
+        - azimuth
+        - range
+      overlap:
+        type: number
+        description: Fractional overlap between sublooks
+        minimum: 0.0
+        maximum: 0.99
+      deweight:
+        type: boolean
+        description: Apply deweighting before decomposition
+        default: true
+      deskew:
+        type: boolean
+        description: Center the phase history (DeltaKCOA) before cutting
+    additionalProperties: false
+remote_versions: []

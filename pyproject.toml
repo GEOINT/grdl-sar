@@ -21,8 +21,11 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Scientific/Engineering :: GIS",
     "Topic :: Scientific/Engineering :: Image Processing",
+    "Typing :: Typed",
 ]
 dependencies = [
     "grdl>=0.8.1",
@@ -37,9 +40,16 @@ detection = [
 polsar = [
     "numba>=0.57.0",
 ]
+all = [
+    "shapely>=2.0.0",
+    "numba>=0.57.0",
+]
 dev = [
     "pytest>=7.0.0",
 ]
+
+[project.urls]
+Repository = "https://github.com/GEOINT/grdl-sar"
 
 [project.entry-points."grdl.catalogs"]
 grdl_sar = "grdl_sar:get_catalog_path"
@@ -51,7 +61,11 @@ include-package-data = true
 include = ["grdl_sar*"]
 
 [tool.setuptools.package-data]
-grdl_sar = ["catalog.yaml"]
+grdl_sar = ["**/*.md", "py.typed", "catalog.yaml"]
+
+[tool.setuptools.data-files]
+"share/grdl-sar" = ["README.md", "LICENSE"]
+"share/grdl-sar/.github/workflows" = [".github/workflows/publish.yml"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+recursive-include grdl_sar *.md *.typed *.yaml
+recursive-include .github *.yml
